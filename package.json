@@ -1,0 +1,22 @@
+{
+  "name": "noteapp",
+  "productName": "Note App",
+  "version": "1.0.0",
+  "description": "Tolga Açgül's Project",
+  "author": "Tolga Açgül",
+  "license": "ISC",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "keywords": [
+    ""
+  ],
+  "dependencies": {
+    "electron": "^11.3.0"
+  }
+}
