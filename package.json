@@ -17,6 +17,6 @@
     ""
   ],
   "dependencies": {
-    "electron": "^11.3.0"
+    "electron": "^4.1.0"
   }
 }

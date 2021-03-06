@@ -1,0 +1,92 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: #eef;
+}
+
+/*----------------------- Login Kismi -----------------------*/
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+.login-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: none;
+    border-radius: 9px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+    padding: 20px 0 30px 0;
+    width: 100%;
+    height: 320px;
+    max-width: 400px;
+}
+.login-container .login-info{
+    display: inline-block;
+}
+.login-info h1{
+    color: #1977f2;
+}
+.login-info p{
+    color: #1d2129;
+}
+
+.login-container .login-data{
+    display: block;
+    width: 90%;
+}
+.login-data .data-boxs{
+    padding: 6px 0;
+    margin: auto;
+    width: 85%;
+}
+.data-boxs .login-forms{
+    border: 1px solid #dddfff;
+    border-radius: 6px;
+    color: #1d2129;
+    font-family: Helvetica, Arial, sans-serif;
+    height: 45px;
+    font-size: 15px;
+    width: 100%;
+}
+.data-boxs input.logintext{
+    padding: 0 10px;
+}
+.data-boxs button.send-data{
+    background-color: #5fb82d;
+    color: #fff;
+    font-size: 18px;
+}
+.data-boxs button.send-data:hover{
+    background-color: #56a528;
+    cursor:pointer;
+}
+.data-boxs button.send-data:focus{
+    background-color: #4b9123;
+}
+.data-boxs button.cancel-data{
+    background-color: #992a2a;
+    color: #fff;
+    font-size: 18px;
+}
+.data-boxs button.cancel-data:hover{
+    background-color: #7e2121;
+    cursor:pointer;
+}
+.data-boxs button.cancel-data:focus{
+    background-color: #641919;
+}
+
+.data-boxs a{
+    text-decoration: none;
+    color: #1977f2;
+}

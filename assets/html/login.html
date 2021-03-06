@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+
+    <section id="container">
+        <div class="login-container">
+            <div class="login-info">
+                <div><h1>NoteApp</h1></div>
+            </div>
+            <div class="login-data">
+                <div class="data-boxs">
+                    <input type="text" name="username" class="login-forms logintext" id="username" placeholder="@kullanıcı_adı">
+                </div>
+                <div class="data-boxs">
+                    <input type="text" name="userpass" class="login-forms logintext" id="userpas" placeholder="******">
+                </div>
+                <div class="data-boxs">
+                    <button class="login-forms send-data" id="idBtnSendData">Giriş</button>
+                    <button class="login-forms cancel-data" id="idBtnCancel">Vazgeç</button>
+                </div>
+                <div class="data-boxs">
+                    <a href="#">Kayıtlı değil misin?</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>   
+        const electron = require('electron')
+        const { ipcRenderer } = electron;
+
+        let btnCancel = document.querySelector('#idBtnCancel');
+        btnCancel.addEventListener('click', ()=>{
+            ipcRenderer.send('channel:htmlLogin-cancel');
+        });
+        
+        /*document.querySelector("#idSendData").onclick = function(){
+            window.open("html/home.html", "_blank");
+        }
+        */
+    </script>
+</body>
+
+</html>

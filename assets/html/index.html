@@ -4,23 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anasayfa</title>
-    <style>
-        body{
-            margin: 0;
-            padding: 0;
-        }
-        div{
-            background-color: blue;
-            width: 100%;
-            height: 200px;
-        }
-    </style>
+    <title>NoteApp</title>
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
-    <div>
+    <section id="idContainer">
+        <section id="idLeftSide">
+            <div id="idUserInfo">
+                <img src="../img/person.png">
+                <p>@NULL</p>
+            </div>
+            <div id="idUsersButtons">
+                <button id="idBtnLogin">Giriş</button>
+                <button id="idBtnSingUp">Kayıt</button>
+            </div>
 
-    </div>
-    <button>buton</button>
+            <hr>
+
+            <div id="idAddWriteArea">
+                <textarea id="idWriteNote" rows="4" placeholder="Kısa bir not.."></textarea>
+                <button id="idBtnAddWritedNote">EKLE</button>
+            </div>
+        </section>
+        <main>
+            <section id="idHeader">
+                <h3>NoteApp</h3>
+                <nav id="idHeadNav">
+                    <form action="" name="aramakutusu" method="POST">
+                        <input type="text" name="arama" placeholder="Notlarımdan...">
+                        <button>Ara</button>
+                    </form>
+                </nav>
+            </section>
+
+            <section id="idContent">
+                
+                <div class="notesContainer">
+
+                    <div class="row warnNote">
+                        <div class="col">
+                            <p class="myNote">Herhangi bir not kaydınız yok!</p>
+                        </div>
+                    </div>
+
+                    <!-- <div class="row ">
+                        <div class="col">
+                            <p class="myNote">uygulamayaı kapatmayı unutma</p>
+                            <button class="btnNoteErase">X</button>
+                        </div>
+                    </div>
+                </div> -->
+                
+                <!--<div id="idAddNote"><img src="../img/plus.png"></div>-->
+            </section>
+
+            <footer>
+                <span>Notlar: </span><span id="idNoteCount"></span>
+            </footer>
+        </main>
+    </section>
+
+    <script src="../js/index.js"></script>
 </body>
 </html>
