@@ -8,39 +8,35 @@
     <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
+
     <section id="idContainer">
         <section id="idLeftSide">
-            <div id="idUserInfo">
-                <img src="../img/person.png">
-                <p>@NULL</p>
-            </div>
-            <div id="idUsersButtons">
-                <button id="idBtnLogin">Giriş</button>
-                <button id="idBtnSingUp">Kayıt</button>
-            </div>
-
-            <hr>
-
-            <div id="idAddWriteArea">
-                <textarea id="idWriteNote" rows="4" placeholder="Kısa bir not.."></textarea>
-                <button id="idBtnAddWritedNote">EKLE</button>
+            <div id="idLeftSide_item">
+                <div id="idUserInfo">
+                    <img src="../img/person.png">
+                    <p>@NULL</p>
+                </div>
+                <div id="idUsersButtons" class="clsHide">
+                    <button id="idBtnLogin">Giriş</button>
+                    <button id="idBtnSingUp">Kayıt</button>
+                </div>
+                <div id="idAddWriteArea">
+                    <textarea id="idWriteNote" rows="4" placeholder="Kısa bir not.."></textarea>
+                    <button id="idBtnAddWritedNote">EKLE</button>
+                </div>
             </div>
         </section>
         <main>
             <section id="idHeader">
-                <h3>NoteApp</h3>
-                <nav id="idHeadNav">
-                    <form action="" name="aramakutusu" method="POST">
-                        <input type="text" name="arama" placeholder="Notlarımdan...">
-                        <button>Ara</button>
-                    </form>
-                </nav>
+                <div><h3><bold>NoteApp</bold></h3></div>
+                <div id="idHeadNav" class="clsHide">                  
+                    <input type="text" name="arama" placeholder="Notlarımdan...">
+                    <button id="idBtnSearch">Ara</button>
+                </div>
             </section>
 
-            <section id="idContent">
-                
+            <section id="idContent">    
                 <div class="notesContainer">
-
                     <div class="row warnNote">
                         <div class="col">
                             <p class="myNote">Herhangi bir not kaydınız yok!</p>
@@ -52,10 +48,8 @@
                             <p class="myNote">uygulamayaı kapatmayı unutma</p>
                             <button class="btnNoteErase">X</button>
                         </div>
-                    </div>
-                </div> -->
-                
-                <!--<div id="idAddNote"><img src="../img/plus.png"></div>-->
+                    </div> -->
+                </div>                
             </section>
 
             <footer>
@@ -63,6 +57,8 @@
             </footer>
         </main>
     </section>
+
+
 
     <script src="../js/index.js"></script>
 </body>
