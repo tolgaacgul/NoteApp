@@ -12,14 +12,7 @@ let arrayObj = [];
 app.on('ready', () => {
     fncHtmlIndex();
     fncActiveMainMenu();
-
-    //htmlIndex domları yüklendiğinde 1kereye mahsus...
-    htmlIndex.webContents.once("dom-ready", ()=>{
-        db.query("SELECT * FROM tb_notes", (error, data, fields)=>{
-            //console.log(data)
-            htmlIndex.webContents.send("mainjs->indexhtml:db_init", data)
-        })
-    })
+    fncDomReady();
 
     //DB:note sil
     ipcMain.on("indexhtml->mainjs:db_remove_note", (error, note_id)=>{
@@ -30,7 +23,6 @@ app.on('ready', () => {
             }
         })
     })
-
     //index.html den Note'u oku
     ipcMain.on("indexhtml->mainjs:writedNote", (err, data) => {
         if(data){    
@@ -86,7 +78,11 @@ const mainMenuTemplate = [
             },
             {
                 label : "Reload",
-                role : "reload"
+                //role : "reload",
+                accelerator : process.platform == "darwin" ? "Command+r" : "Ctrl+r",
+                click(){
+                    //fncDomReady();
+                }
             },
             {
                 label : "Çıkış",
@@ -177,4 +173,17 @@ function fncHtmlLogin(){
     })
     //esnekllik
     htmlLogin.setResizable(false)
+}
+function fncDomReady(){
+    //htmlIndex domları yüklendiğinde 1kereye mahsus...
+    htmlIndex.webContents.once("dom-ready", ()=>{
+        fncUpdateData();
+    })
+}
+function fncUpdateData(){    
+    //veri çek
+    db.query("SELECT * FROM tb_notes", (error, data, fields)=>{
+        //console.log(data)
+        htmlIndex.webContents.send("mainjs->indexhtml:db_init", data)
+    })
 }

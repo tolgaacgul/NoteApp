@@ -1,13 +1,16 @@
 {
   "name": "noteapp",
-  "productName": "Note App",
+  "productName": "noteapp",
   "version": "1.0.0",
   "description": "Tolga Açgül's Project",
   "author": "Tolga Açgül",
   "license": "ISC",
   "main": "main.js",
   "scripts": {
-    "test": "electron ."
+    "test": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/img/icons/mac/note.icns --prune=true --out=output-file",
+    "package-win": "electron-packager . noteapp --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/img/icons/win/note.ico --prune=true --out=output-file --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Note App\"",
+    "package-linux": "electron-packager . noteapp --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/img/icons/linux/note.png --prune=true --out=output-file"
   },
   "repository": {
     "type": "",
@@ -17,7 +20,10 @@
     ""
   ],
   "dependencies": {
-    "electron": "^4.1.0",
     "mysql": "^2.16.0"
+  },
+  "devDependencies": {
+    "electron": "^11.3.0",
+    "electron-packager": "^15.2.0"
   }
 }

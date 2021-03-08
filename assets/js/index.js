@@ -21,12 +21,11 @@ ipcRenderer.on("mainjs->indexhtml:obj", (err,data) =>{
 
 //DB data select
 ipcRenderer.on("mainjs->indexhtml:db_init", (error, data)=>{
-    //console.log(data);
+    console.log(data);
     data.forEach(item => {
         fncDrawNoteRow(item)
     });
 })
-
 
 function fncDrawNoteRow(data){
     //çizdirmek
@@ -81,3 +80,6 @@ function fncCheckNoteCount(){
     noteCount.innerText = notesContainer.children.length-1;
 }
 
+// ipcRenderer.on("mainjs->indexhtml:contentErase",()=>{
+//     document.querySelector(".notesContainer").innerHTML= "";
+// })
